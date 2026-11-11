@@ -248,8 +248,6 @@ def novaprobe():
     glance = glanceclient.Client("2", region_name=region, session=ks_session)
     neutron = neutron_client.Client(region_name=region, session=ks_session)
 
-    LOG.info(f"Nova version: {nova.versions.get_current().version}")
-
     if not argholder.image:
         if argholder.registry_img:
             image = get_registry_image(argholder.registry_img, glance)
